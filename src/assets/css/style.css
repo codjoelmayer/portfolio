@@ -1,0 +1,309 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Ms+Madi&family=Roboto+Flex:opsz,wght@8..144,100&family=Roboto:wght@100&family=Square+Peg&family=Updock&family=Whisper&display=swap');
+/* Counter */
+:root{
+    counter-reset: percentages;
+}
+
+/* Select all elements */
+html {
+    scroll-behavior: smooth;
+}
+/*  */
+*{
+    box-sizing: border-box;
+}
+/* body */
+body {
+    font-family: "Roboto", 'Courier New', Courier, monospace;
+    overflow-x: hidden;
+    background-image: linear-gradient(from to, rgb(85, 67, 19),
+    rgb(75, 50, 2))!important;
+}
+/*  */
+[class *="row" ] {
+    margin: 1em 0;
+}
+/* Logo */
+[class *="logo"] {
+    width: 5em;
+}
+/* nav */
+nav {
+    box-shadow: 2px 1px 3px rgba(124, 127, 61,.3),
+    2px 2px 4px rgba(71, 66, 10,.5);
+    z-index: 20;
+}
+/* Navbar items */
+/* Logo */
+[class *="logo"] {
+    border-bottom-left-radius: 35%;
+}
+/* landing */
+#landing {
+    scroll-margin: 1px;
+    padding-bottom: 2em;
+    box-shadow: 1px 1px 3vw rgba(114, 98, 51, 0.3),
+    1px 2px 4px rgba(111, 107, 22, 0.4);
+}
+
+/* section */
+section  {
+    margin: 2em 0;
+    box-shadow: 2px 1px 3vw rgb(128, 125, 113),
+    2px 1px 4vw rgb(71, 67, 54);
+    border-radius: 5%;
+}
+/*  */
+/* section #joel-profile { */
+    /* transition: transform .5s ease-in-out infinite; */
+    /* transform: skew(11deg, 15deg) translate(-6px, 2px) rotate3d(1, -1, -2, -.2rad);
+} */
+/* Ignore the first section */
+section:not(:first-child) {
+    background: linear-gradient(60deg, rgb(79, 64, 11), rgb(55, 45, 11));
+}
+/* Links */
+.navbar::after{
+    box-shadow: 2px 2px 2vw rgb(128, 125, 113),
+    2px 3px 4vw rgb(66, 61, 43);
+    border-bottom-right-radius: 10%;
+}
+/* styling all anchor tags */
+nav a{
+    text-decoration: none;
+    transition: rotate(30deg) 1s ease-in-out;
+    font-weight: 900;
+    border-bottom-left-radius: 25%;
+}
+/* On mouse hover */
+nav a:hover{
+    box-shadow: 1px 2px 4px rgb(84, 79, 59), 
+    2px 3px 6px rgb(92, 88, 75) ;
+    background-color: rgb(32, 25, 6);
+    border-radius: 25%;
+}
+nav i {
+    font-size: 1.2em;
+}
+/* Sub-menu */
+[class *="dropdown-menu"], [class *="dropdown-menu"] a,
+[class *="dropdown-menu"] a:hover {
+    background-color: rgb(48, 51, 51);
+    color: white;
+}
+/*  */
+[class *="dropdown-menu"] a {
+    box-shadow: 1px 2px 4px rgb(128, 125, 113), 
+    2px 3px 6px rgb(42, 39, 33),
+    3px 4px 8px rgb(71, 67, 54) ;
+}
+/* Typing animation */
+.typing-wrapper {
+    display: flex
+}
+/* h2.typing */
+.typing {
+    margin-left: .2em;
+    position: relative;
+}
+.typing::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 90%;
+    border-right: 1px solid green;
+    background-color: rgb(103, 119, 119);
+    animation: typing-animation 1s infinite;
+}
+/* typing - animation */
+@keyframes typing-animation {
+    0%{
+        opacity: 0;
+    }   
+    100% {
+        opacity: 1;
+    }
+}
+
+/* About */
+#about-me {
+    scroll-margin: 7em;
+}
+/* Image slider */
+.img-slider {
+    overflow: hidden;
+    padding-bottom: 2em;
+}
+.img-slider figure {
+    position: relative;
+    width: 300%;
+    margin: 0;
+    left: 0;
+    animation: img-slider 7s infinite alternate running;
+}
+/* images */
+.img-slider figure img {
+    width: 33%;
+    height: 50vh;
+    float: left;
+}
+/* Animation */ 
+@keyframes img-slider {
+    from{
+        left: -20%;
+    }
+    to{
+       left: -160%;
+   }
+}
+/*  */
+.about-me-wrapper > p {
+    box-shadow: 1px 1px 2vw rgb(128, 125, 113),
+    2px 1px 4vw rgb(71, 67, 54);
+    padding: 1em;
+    line-height: 1.5em;
+}
+/*  */
+/* media query */
+@media screen and (min-width: 993px) {
+    nav {
+        position: relative;
+    }
+}
+/*  */
+@media screen and (max-width: 350px) {
+    .profile-row-wrapper [class *="col"] > img{
+        width: 100%;      
+    }
+    /*  */
+    .wrapper {
+        display: flex;
+        flex-flow: column wrap;
+    }
+    /*  */
+    .wrapper .text-wrapper {
+        left: 0;
+        font-size: 2em;
+    }
+}
+/*  */
+@media screen and (max-width: 992px) {
+    nav {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }   
+    .wrapper .row {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    /* col */
+    .wrapper .experience {
+        width: 100%;
+    }
+}
+/* Up arrow */
+.up-arrow i {
+    font-size: 5em;
+    right: 0;
+    margin-right: .5em;
+    position: fixed;
+    top: 30vh;
+    z-index: 50;
+}
+/* Progress bar animation */
+.progress-bar {
+    width: 0;
+}
+#skills:hover .progress-bar, #skills:active .progress-bar {
+    animation: progress-animation 10s alternate forwards;
+}
+/* animation */
+@keyframes progress-animation {
+    from {
+        width: 0;
+    }
+    to{
+        counter-increment: percentages;
+        width: 100%;
+    }
+}
+/* Testimonials */
+.test-names{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#testimonials .carousel-item img {
+    object-fit: cover;
+}
+/* Education */
+section#education {
+    scroll-margin: 8em;
+}
+/* Start creating a timeline */
+section .edu-col {
+    border-radius: 3em;
+}
+/* even */
+section .edu-col:nth-child(even) {
+    align-self: flex-end;
+    background-color: darkcyan;
+    border-left: 3em solid black;
+    box-shadow: 4px 3px 4px rgb(128, 125, 113),
+    4px 3px 6px rgb(71, 67, 54);
+    position: relative;
+}
+
+/* Odd */
+section .edu-col:nth-child(odd) {
+    background-color: darkolivegreen;
+    border-right: 3em solid black;
+    box-shadow: 4px 3px 4px rgb(72, 65, 33),
+    4px 3px 6px rgb(144, 126, 66);
+}
+
+/* Experience */
+section#experience {
+    scroll-margin: 7em;
+}
+/* Projects */
+section#projects {
+    scroll-margin: 8em;
+}
+section#projects .card > img {
+    height: 10em;
+}
+
+/* Contact */
+section#contact-me {
+    scroll-margin: 8em;
+}
+/* Apply a background-color to all my form input elements */
+section#contact-me form input:not(.btn), 
+section#contact-me form textarea {
+    background-color: rgb(12, 11, 11);
+    color: white;
+}
+/* box-shadow on a form */
+section#contact-me form {
+    box-shadow: 2px 3px 2em rgb(128, 125, 113),
+    2px 3px 4em rgb(66, 61, 43);
+}
+
+section#contact-me form  {
+    transform: translateY() 1s;
+}
+/* Social media */
+section#social-media {
+    scroll-margin: 8em;
+}
+/*  */
+section#social-media .card-body {
+    text-align: center;
+}
+/* hover */
+section#social-media .card-body a:hover {
+    transform: translate3d(1px, 1px, 2em) rotate3d(2, -1, -1, -0.2turn);
+}
